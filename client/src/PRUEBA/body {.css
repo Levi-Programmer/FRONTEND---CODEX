@@ -2,19 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image:url(imagenes/fondo.png);
 }
 
-/* Estilos del encabezado */
+
 .encabezado {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #e9e1e1;
+    color: rgb(0, 0, 0);
     padding: 10px;
 }
 
 .logo {
-    width: 100px; /* Ajusta el tamaño según necesites */
+    width: 150px; 
 }
 
 .enlaces {
@@ -29,7 +31,7 @@ body {
 }
 
 .boton-login {
-    background-color: blue;
+    background-color: rgb(1, 1, 1);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -37,10 +39,10 @@ body {
 }
 
 .boton-login:hover {
-    background-color: darkblue;
+    background-color: rgb(91, 91, 95);
 }
 
-/* Estilos para el formulario */
+
 .formulario-busqueda {
     display: flex;
     justify-content: space-around;
@@ -57,10 +59,10 @@ body {
 }
 
 .campo-formulario input {
-    width: 100%; /* Ajusta el ancho según necesites */
+    width: 100%; 
 }
 
-/* Estilos para la sección de ciudades */
+
 section {
     display: flex;
     justify-content: center;
@@ -73,12 +75,12 @@ section {
 }
 
 .ciudad img {
-    width: 300px; /* Tamaño fijo de ancho */
-    height: 200px; /* Tamaño fijo de altura */
+    width: 300px; 
+    height: 200px; 
     border-radius: 10px;
 }
 
 .ciudad p {
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
 }
