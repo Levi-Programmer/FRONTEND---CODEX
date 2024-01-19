@@ -1,0 +1,64 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+    color: #003366; 
+}
+
+p {
+    margin: 20px auto;
+    line-height: 1.5;
+    max-width: 80%; 
+    padding: 20px; 
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-image: url('imagenes/encabezado1.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center 20%; 
+    color: rgb(0, 0, 0); 
+    padding: 10px;
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+}
+
+.log {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.boton-login {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.boton-login:hover {
+    background-color: #0056b3;
+}
+
+.text1 {
+    margin: 0 auto;
+    width: 70%;
+    text-align: justify;
+    padding: 0 15%; 
+}

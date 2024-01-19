@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image:url(imagenes/fondo.png);
+    background-color: #fff;
+    background-size: cover;
 }
 
 
@@ -10,18 +11,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e9e1e1;
-    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-image: url('imagenes/encabezado1.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center 20%; 
+    color: rgb(0, 0, 0); 
     padding: 10px;
 }
 
-.logo {
-    width: 150px; 
-}
 
-.enlaces {
-    display: flex;
-    align-items: center;
+.logo {
+    width: 300px; 
 }
 
 .enlaces a {
@@ -42,24 +43,116 @@ body {
     background-color: rgb(91, 91, 95);
 }
 
+/* comienza form - edicion*/
 
-.formulario-busqueda {
+#flightBookingApp {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: 80px ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #161e6a;
 }
 
-.campo-formulario {
-    margin-right: 10px;
+#flightBookingApp div {
+    margin: 10px;
 }
 
-.campo-formulario label {
-    display: block;
+label {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
-.campo-formulario input {
-    width: 100%; 
+input[type="text"], input[type="date"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid hsl(243, 57%, 24%);
+    background-color: rgb(255, 255, 255);
+}
+
+/*termina form*/
+
+/*aqui empieza en panel de ayuda*/
+
+section {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+section div {
+    margin: 10px; 
+}
+
+section div a img {
+    transition: opacity 0.3s; 
+    max-width: 100%; 
+    height: auto; 
+}
+
+section div:hover a img {
+    opacity: 0.7; 
+}
+
+
+/* aqui inicia la edicion del carrusel- este bloq de codigo lo saque de CHAT GPT REVISAR*/
+
+.carousel-container {
+    width: 80%; /* Hace que el contenedor ocupe el ancho completo de la página */
+    max-width: 1200px; /* Máximo ancho del carrusel */
+    margin: auto; /* Centra el carrusel en la página */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.carousel video, 
+.carousel img {
+    width: 100%; /* Hace que el video y las imágenes ocupen el ancho completo del carrusel */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+ /*aqui finalice el carrusel - revision pendiente*/ 
+
+/*boton superpuest del contenedr*/
+
+ .imagen-contenedor {
+    position: relative;
+    display: inline-block; /* aqui q el contenedor se ajuste al tamaño de la imagen */
+}
+
+.boton-superpuesto {
+    position: absolute;
+    top: 70%; /* vertical */
+    left: 50%; /* horztal */
+    transform: translate(-50%, -50%); /* centroooo */
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos adicionales para el botón en el hover */
+.boton-superpuesto:hover {
+    background-color: #0056b3;
+}
+
+/*finnnnn boton superpuest del contenedr*/
+
+button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(61, 101, 145);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 
@@ -70,17 +163,60 @@ section {
     margin-top: 20px;
 }
 
-.ciudad {
-    margin: 10px;
-}
+/* EDICION PANEL DE CIUDADES */
 
-.ciudad img {
+.ciudad img, p {
+    margin: 10px;
     width: 300px; 
     height: 200px; 
     border-radius: 10px;
-}
-
-.ciudad p {
     font-weight: bold;
     color: #ffffff;
 }
+
+#miami,
+#alemania,
+#cancun,
+#paris {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#miami:hover,
+#alemania:hover,
+#cancun:hover,
+#paris:hover {
+    border-color: blue; /* Utiliza 'blue' o '#0000FF' para el color azul */
+    opacity: 0.85;
+}
+
+
+/*pie de paginaaaa*/
+footer {
+    background-color: hsl(243, 57%, 24%);; /* Color de fondo del pie de página */
+    color: #fff; /* Color de texto */
+    padding: 20px; /* Espaciado interno para contenido */
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.redes-sociales a {
+    color: #fff; /* Color de los enlaces de redes sociales */
+    margin: 0 10px; /* Espaciado entre los enlaces */
+    text-decoration: none; /* Quita la decoración de enlace */
+}
+
+.redes-sociales a:hover {
+    text-decoration: underline; /* Subraya los enlaces al pasar el mouse sobre ellos */
+}
+
+.certificacion-legal a {
+    color: #fff; /* Color del enlace de certificación legal */
+    text-decoration: none; /* Quita la decoración de enlace */
+}
+
+.certificacion-legal a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el mouse sobre él */
+}
+
+
+
