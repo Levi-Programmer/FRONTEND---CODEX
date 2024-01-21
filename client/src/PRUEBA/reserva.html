@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>HORIZON</title>
+    <link rel="stylesheet" type="text/css" href="reserva.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--encabezado --> 
+<div class="encabezado">
+    <img src="imagenes/logito.png" alt="Logo" class="logo">
+    <div class="enlaces">
+        <a href="about.html" target="_blank"> Acerca de nosotros</a>
+        <a href="pagina2.html">Destinos </a>
+        <a href="politicas.html" target="_blank" > Politicas </a>
+        <button id="botonLogin" class="boton-login" target="_blank">Login</button>
+            <script>
+                document.getElementById('botonLogin').addEventListener('click', function() {
+                    window.location.href = 'login.html';
+                });
+            </script>
+
+    </div>
+</div> 
+
+<!-- bloque de busqueda - ciudad destino y origen-->
+
+<div id="flightBookingApp">
+    <label for="regreso">
+        <input id="regreso" type="radio" name="tripType" v-model="flight.tripType" value="ida_regreso"> Ida y Regreso
+    </label><br>
+
+    <label for="ida">
+        <input id="ida" type="radio" name="tripType" v-model="flight.tripType" value="solo_ida"> Solo Ida
+    </label><br>
+
+    <div>
+        <label for="origin">Origen:</label>
+        <input type="text" id="origin" v-model="flight.origin">
+    </div>
+
+    <div>
+        <label for="destination">Destino:</label>
+        <input type="text" id="destination" v-model="flight.destination">
+    </div>
+
+    <div v-if="flight.tripType === 'ida_regreso'">
+        <label for="departureDate">Fecha de Ida:</label>
+        <input type="date" id="departureDate" v-model="flight.departureDate">
+    </div>
+
+    <div v-if="flight.tripType === 'ida_regreso'">
+        <label for="returnDate">Fecha de Regreso:</label>
+        <input type="date" id="returnDate" v-model="flight.returnDate">
+    </div>
+
+    <div v-if="flight.tripType === 'solo_ida'">
+        <label for="departureDate">Fecha de Ida:</label>
+        <input type="date" id="departureDate" v-model="flight.departureDate">
+    </div>
+
+    <button @click="searchFlights">
+        <i class="fas fa-search"></i> <!-- Icono de lupa -->
+    </button>
+    
+     
+</div>
+
+<script>
+    new Vue({
+        el: '#flightBookingApp',
+        data: {
+            flight: {
+                tripType: 'ida_regreso',
+                origin: '',
+                destination: '',
+                departureDate: '',
+                returnDate: ''
+            }
+        },
+        methods: {
+            searchFlights: function() {
+                console.log("Buscando vuelos desde " + this.flight.origin + " a " + this.flight.destination + " del " + this.flight.departureDate + " al " + this.flight.returnDate);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>HORIZON</title>
+    <link rel="stylesheet" type="text/css" href="body.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+
+<body>
+
+<!--encabezado --> 
+<div class="encabezado">
+    <img src="imagenes/logito.png" alt="Logo" class="logo">
+    <div class="enlaces">
+        <a href="about.html" target="_blank"> Acerca de nosotros</a>
+        <a href="pagina2.html">Destinos </a>
+        <a href="politicas.html" target="_blank" > Politicas </a>
+        <button id="botonLogin" class="boton-login" target="_blank">Login</button>
+            <script>
+                document.getElementById('botonLogin').addEventListener('click', function() {
+                    window.location.href = 'login.html';
+                });
+            </script>
+
+    </div>
+</div> 
+<!--fin encabezado --> 
+
+
+<!--bloque de codigo para formulario de busqueda formato de avianca-->
+<div id="flightBookingApp">
+    <label for="regreso">
+        <input id="regreso" type="radio" name="tripType" v-model="flight.tripType" value="ida_regreso"> Ida y Regreso
+    </label><br>
+
+    <label for="ida">
+        <input id="ida" type="radio" name="tripType" v-model="flight.tripType" value="solo_ida"> Solo Ida
+    </label><br>
+
+    <div>
+        <label for="origin">Origen:</label>
+        <input type="text" id="origin" v-model="flight.origin">
+    </div>
+
+    <div>
+        <label for="destination">Destino:</label>
+        <input type="text" id="destination" v-model="flight.destination">
+    </div>
+
+    <div v-if="flight.tripType === 'ida_regreso'">
+        <label for="departureDate">Fecha de Ida:</label>
+        <input type="date" id="departureDate" v-model="flight.departureDate">
+    </div>
+
+    <div v-if="flight.tripType === 'ida_regreso'">
+        <label for="returnDate">Fecha de Regreso:</label>
+        <input type="date" id="returnDate" v-model="flight.returnDate">
+    </div>
+
+    <div v-if="flight.tripType === 'solo_ida'">
+        <label for="departureDate">Fecha de Ida:</label>
+        <input type="date" id="departureDate" v-model="flight.departureDate">
+    </div>
+
+    <button @click="searchFlights">
+        <i class="fas fa-search"></i> <!-- Icono de lupa -->
+    </button>
+    
+     
+</div>
+
+<script>
+    new Vue({
+        el: '#flightBookingApp',
+        data: {
+            flight: {
+                tripType: 'ida_regreso',
+                origin: '',
+                destination: '',
+                departureDate: '',
+                returnDate: ''
+            }
+        },
+        methods: {
+            searchFlights: function() {
+                console.log("Buscando vuelos desde " + this.flight.origin + " a " + this.flight.destination + " del " + this.flight.departureDate + " al " + this.flight.returnDate);
+            }
+        }
+    });
+</script>
+<!--fin bloque de codigo para formular-->
+    
+
+<!--CARRUSEL-->
+<div class="carousel">
+    <div class="slide">
+        <img src="imagenes/banner1.png" alt="Imagen 1">
+        <button id="botonLogin2" class="reserva-btn" target="_blank">Reserva Aquí</button>
+        <script>
+            document.getElementById('botonLogin2').addEventListener('click', function() {
+                window.location.href = 'reserva.html';
+            });
+        </script>
+    
+    </div>
+    <div><img src="imagenes/banner2.png" alt="Imagen 2"></div>
+    <div><img src="imagenes/banner3.png" alt="Imagen 3"></div>
+    <div>
+        <video width="320" height="240" controls>
+            <source src="imagenes/banner4.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<section>
+    <div class="carousel-nav">
+        <button data-slide-index="0">1</button>
+        <button data-slide-index="1">2</button>
+        <button data-slide-index="2">3</button>
+        <button data-slide-index="3">4</button>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+        $('.carousel').slick({
+            // Opciones de configuración del carrusel aquí
+        });
+
+        // Agregar funcionalidad a los botones de navegación
+        $('.carousel-nav button').click(function(){
+            var slideIndex = $(this).data('slide-index');
+            $('.carousel').slick('slickGoTo', slideIndex);
+        });
+    });
+    </script>
+
+</section>
+
+<script>
+    $(document).ready(function(){
+        $('.carousel').slick({
+            autoplay: true,  
+            autoplaySpeed: 3000,  
+            arrows: true, 
+            dots: true,  
+            infinite: true,  
+            speed: 500,  /
+            slidesToShow: 1,  
+            slidesToScroll: 1 
+        });
+    });
+</script>
+<!-- fin CARRUSEL-->
+
+
+<!--INICIO OPCIONES DE PAGINA-->
+<section>  
+
+    <div class="panel" id="checkin">
+        <a href="imagenes/panel2.png">
+            <img src="imagenes/panel2.png" alt="checkin">
+        </a>
+    </div>
+
+    <div class="panel" id="busqueda">
+        <a href="imagenes/panel1.png">
+            <img src="imagenes/panel1.png" alt="busqueda">
+        </a>
+    </div>
+
+    <div class="panel" id="viaje">
+        <a href="imagenes/panel3.png">
+            <img src="imagenes/panel3.png" alt="viaje">
+        </a>
+    </div>
+
+<section> 
+<!-- FIN DE OP PAG-->
+
+<!--seccion de imagenes de promoción a destinos--> 
+<section>  
+    <div class="ciudad" id="miami">
+        <a href="imagenes/MIAMI.png">
+            <img src="imagenes/MIAMI.png" alt="miami">
+        </a>
+    </div>
+
+    <div class="ciudad" id="cancun">
+        <a href="imagenes/CANCUN.png">
+            <img src="imagenes/CANCUN.png" alt="cancun">
+        </a>
+    </div>
+
+    <div class="ciudad" id="alemania">
+        <a href="imagenes/ALEMANIA.png">
+            <img src="imagenes/ALEMANIA.png" alt="alemania">
+        </a>
+    </div>
+
+    <div class="ciudad" id="paris">
+        <a href="imagenes/PARIS.png">
+            <img src="imagenes/PARIS.png" alt="paris">
+        </a>
+    </div>
+</section> 
+<!--fin seccion de imagenes de promoción a destinos--> 
+
+</body>
+
+<!--pie de pag-->
+<footer>
+    <div class="redes-sociales">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">X</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
+    
+    <div class="certificacion-legal">
+        <a href="#">Certificación Legal</a>
+    </div>
+
+    <div class="derechos-reservados">
+        &copy; 2024 Horizon GROUP . Todos los derechos reservados.
+    </div>
+</footer>
+
+</html>
+
