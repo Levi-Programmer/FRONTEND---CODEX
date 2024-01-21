@@ -1,17 +1,20 @@
 <template>
   <div class="home">
     <HelloWorld msg="WE ARE MAKING A PROKECT"/>
+    <ChatBot/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+
 import HelloWorld from '@/components/HelloWorld.vue'
+import ChatBot from '@/components/ChatBot.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    HelloWorld,
+    ChatBot
   }
 }
 </script>
