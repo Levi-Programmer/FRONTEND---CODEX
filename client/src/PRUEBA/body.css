@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #ffffff;
     background-size: cover;
 }
 
@@ -25,12 +25,14 @@ body {
     width: 300px; 
 }
 
+/*acerca de nosotros, politicas etc*/
 .enlaces a {
     margin-right: 20px;
     text-decoration: none;
     color: black;
 }
 
+/*login*/
 .boton-login {
     background-color: rgb(1, 1, 1);
     color: white;
@@ -42,6 +44,9 @@ body {
 .boton-login:hover {
     background-color: rgb(91, 91, 95);
 }
+
+/*login*/
+
 
 /* comienza form - edicion*/
 
@@ -100,44 +105,45 @@ section div:hover a img {
 
 /* aqui inicia la edicion del carrusel- este bloq de codigo lo saque de CHAT GPT REVISAR*/
 
-.carousel-container {
-    width: 80%; /* Hace que el contenedor ocupe el ancho completo de la página */
-    max-width: 1200px; /* Máximo ancho del carrusel */
-    margin: auto; /* Centra el carrusel en la página */
-    overflow: hidden; /* Oculta cualquier desbordamiento */
+.carousel {
+    width: 60%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
 }
 
 .carousel video, 
 .carousel img {
-    width: 100%; /* Hace que el video y las imágenes ocupen el ancho completo del carrusel */
-    height: auto; /* Mantiene la relación de aspecto */
+    width: 100%;
+    height: auto;
 }
 
+.slide {
+    position: relative;
+}
 
- /*aqui finalice el carrusel - revision pendiente*/ 
+.reserva-btn {
+    position: absolute;
+    top: 30%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*aqui finalice el carrusel - revision pendiente*/ 
+
 
 /*boton superpuest del contenedr*/
 
- .imagen-contenedor {
+.slide {
     position: relative;
-    display: inline-block; /* aqui q el contenedor se ajuste al tamaño de la imagen */
 }
 
-.boton-superpuesto {
+.reserva-btn {
     position: absolute;
-    top: 70%; /* vertical */
-    left: 50%; /* horztal */
-    transform: translate(-50%, -50%); /* centroooo */
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Estilos adicionales para el botón en el hover */
-.boton-superpuesto:hover {
-    background-color: #0056b3;
+    top: 70%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
 
 /*finnnnn boton superpuest del contenedr*/
@@ -162,6 +168,22 @@ section {
     flex-wrap: wrap;
     margin-top: 20px;
 }
+
+
+.panel {
+    margin: 10px;
+    width: 300px; 
+    height: 200px; 
+    border-radius: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.panel:hover {
+    border-color: rgb(1, 1, 106); /* Utiliza 'blue' o '#0000FF' para el color azul */
+    opacity: 0.85;
+}
+
 
 /* EDICION PANEL DE CIUDADES */
 
@@ -193,10 +215,11 @@ section {
 
 /*pie de paginaaaa*/
 footer {
-    background-color: hsl(243, 57%, 24%);; /* Color de fondo del pie de página */
-    color: #fff; /* Color de texto */
-    padding: 20px; /* Espaciado interno para contenido */
-    text-align: center; /* Centra el contenido horizontalmente */
+        background-color: hsl(243, 57%, 24%); /* Color de fondo azul */
+        color: #fff; /* Color de texto */
+        padding: 20px; /* Espaciado interno para contenido */
+        text-align: center; /* Centra el contenido horizontalmente */
+        width: 100%; /* Ocupa el 100% del ancho de la página */
 }
 
 .redes-sociales a {

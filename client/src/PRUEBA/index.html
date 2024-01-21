@@ -3,7 +3,7 @@
 <head>
 
     <title>HORIZON</title>
-    <link rel="stylesheet" type="text/css" href="body {.css">
+    <link rel="stylesheet" type="text/css" href="body.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta charset="UTF-8">
@@ -25,21 +25,18 @@
         <a href="pagina2.html">Destinos </a>
         <a href="politicas.html" target="_blank" > Politicas </a>
         <button id="botonLogin" class="boton-login" target="_blank">Login</button>
-
-        <script>
-            // Selecciona el botón por su ID
-            document.getElementById('botonLogin').addEventListener('click', function() {
-                // Redirecciona a la página deseada
-                window.location.href = 'login.html';
-            });
-        </script>
+            <script>
+                document.getElementById('botonLogin').addEventListener('click', function() {
+                    window.location.href = 'login.html';
+                });
+            </script>
 
     </div>
 </div> 
 <!--fin encabezado --> 
 
-<!--bloque de codigo para formulario de busqueda formato de avianca-->
 
+<!--bloque de codigo para formulario de busqueda formato de avianca-->
 <div id="flightBookingApp">
     <label for="regreso">
         <input id="regreso" type="radio" name="tripType" v-model="flight.tripType" value="ida_regreso"> Ida y Regreso
@@ -74,10 +71,10 @@
         <input type="date" id="departureDate" v-model="flight.departureDate">
     </div>
 
-
     <button @click="searchFlights">
         <i class="fas fa-search"></i> <!-- Icono de lupa -->
     </button>
+    
      
 </div>
 
@@ -100,72 +97,93 @@
         }
     });
 </script>
+<!--fin bloque de codigo para formular-->
+    
 
-
-<!--fin bloque de codigo para formulario de busqueda formato de avianca--> 
-
-<!-- comienzo de banner con carrusel-->
-
-<div class="carousel-container">
-    <div class="carousel">
-         <div class="imagen-contenedor">
-                 <img src="imagenes/banner1.png" alt="Imagen">
-                 <button class="boton-superpuesto">Reserva aquí</button>
-        </div>
-        
-        <div><img src="imagenes/banner2.png" alt="Imagen 2"></div>
-        <div><img src="imagenes/banner3.png" alt="Imagen 3"></div>
-        
+<!--CARRUSEL-->
+<div class="carousel">
+    <div class="slide">
+        <img src="imagenes/banner1.png" alt="Imagen 1">
+        <button id="botonLogin2" class="reserva-btn" target="_blank">Reserva Aquí</button>
+        <script>
+            document.getElementById('botonLogin2').addEventListener('click', function() {
+                window.location.href = 'reserva.html';
+            });
+        </script>
+    
+    </div>
+    <div><img src="imagenes/banner2.png" alt="Imagen 2"></div>
+    <div><img src="imagenes/banner3.png" alt="Imagen 3"></div>
+    <div>
         <video width="320" height="240" controls>
             <source src="imagenes/banner4.mp4" type="video/mp4">
         </video>
-        <!-- add mas al carrusel -->
-
     </div>
 </div>
+
+<section>
+    <div class="carousel-nav">
+        <button data-slide-index="0">1</button>
+        <button data-slide-index="1">2</button>
+        <button data-slide-index="2">3</button>
+        <button data-slide-index="3">4</button>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+        $('.carousel').slick({
+            // Opciones de configuración del carrusel aquí
+        });
+
+        // Agregar funcionalidad a los botones de navegación
+        $('.carousel-nav button').click(function(){
+            var slideIndex = $(this).data('slide-index');
+            $('.carousel').slick('slickGoTo', slideIndex);
+        });
+    });
+    </script>
+
+</section>
 
 <script>
     $(document).ready(function(){
         $('.carousel').slick({
-            autoplay: true,  // Rep. auto
-            autoplaySpeed: 3000,  // Vel
-            arrows: true,  // nav
-            dots: true,  // Ind navv
-            infinite: true,  // Bucle infinto
-            speed: 500,  // Vel de transición
+            autoplay: true,  
+            autoplaySpeed: 3000,  
+            arrows: true, 
+            dots: true,  
+            infinite: true,  
+            speed: 500,  /
             slidesToShow: 1,  
-            slidesToScroll: 1  
+            slidesToScroll: 1 
         });
     });
 </script>
+<!-- fin CARRUSEL-->
 
-
-<!-- fin de banner con carrusel-->
 
 <!--INICIO OPCIONES DE PAGINA-->
-
 <section>  
 
-    <div class="op1" id="checkin">
+    <div class="panel" id="checkin">
         <a href="imagenes/panel2.png">
             <img src="imagenes/panel2.png" alt="checkin">
         </a>
     </div>
 
-    <div class="search" id="busqueda">
+    <div class="panel" id="busqueda">
         <a href="imagenes/panel1.png">
             <img src="imagenes/panel1.png" alt="busqueda">
         </a>
     </div>
 
-    <div class="req1" id="viaje">
+    <div class="panel" id="viaje">
         <a href="imagenes/panel3.png">
             <img src="imagenes/panel3.png" alt="viaje">
         </a>
     </div>
 
 <section> 
-
 <!-- FIN DE OP PAG-->
 
 <!--seccion de imagenes de promoción a destinos--> 
@@ -194,10 +212,11 @@
         </a>
     </div>
 </section> 
-
 <!--fin seccion de imagenes de promoción a destinos--> 
 
 </body>
+
+<!--pie de pag-->
 <footer>
     <div class="redes-sociales">
         <a href="#" target="_blank">Facebook</a>
