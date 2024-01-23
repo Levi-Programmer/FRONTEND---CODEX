@@ -50,27 +50,19 @@
   </template>
   
   <script>
+  import axios from 'axios';
+  
   export default {
-    data() {
-      return {
-        formData: {
-          nombre: '',
-          tipoDocumento: 'cedula',
-          edad: '',
-          numeroDocumento: '',
-          fechaNacimiento: '',
-          lugarNacimiento: '',
-          direccion: '',
-          email: '',
-          password: '',
-          confirmPassword: ''
-        }
-      };
-    },
+    // ...
     methods: {
       submitForm() {
-        console.log('Form Data:', this.formData);
-        // Add logic to submit the form data to your server or perform any necessary actions.
+        axios.post('http://localhost:8000/api/form-submit/', this.formData)
+          .then(response => {
+            console.log('Respuesta del servidor:', response);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
       }
     }
   };
